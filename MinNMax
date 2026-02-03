@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+class Solution {
+    public ArrayList<Integer> getMinMax(int[] arr) {
+        int min = Integer.MAX_VALUE;
+        int max = Integer.MIN_VALUE;
+        
+        for(int i = 0; i < arr.length; i++) {
+            if(arr[i] > max) {
+                max = arr[i];
+            }
+            if(arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        ArrayList<Integer> result = new ArrayList<>();
+        result.add(min);
+        result.add(max);
+        
+        return result; 
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        
+        // Only one array — as you wanted
+        int[] arr = {5, 1, 9, -3, 7, 12, 0, 4};
+        
+        Solution sol = new Solution();
+        ArrayList<Integer> result = sol.getMinMax(arr);
+        
+        System.out.println("Array: " + java.util.Arrays.toString(arr));
+        
+        if (arr.length == 0) {
+            System.out.println("Array is empty → min and max are not defined");
+        } else {
+            System.out.println("Minimum = " + result.get(0));
+            System.out.println("Maximum = " + result.get(1));
+        }
+    }
+}
