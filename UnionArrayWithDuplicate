@@ -1,1 +1,31 @@
+import java.util.*;
 
+class Solution {
+    public ArrayList<Integer> findUnion(int[] a, int[] b) {
+        HashSet<Integer> set = new HashSet<>();
+        
+        for (int num : a) {
+            set.add(num);
+        }
+        
+        for (int num : b) {
+            set.add(num);
+        }
+        
+        return new ArrayList<>(set);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+      
+        int[] a = {1, 2, 3, 2, 1};
+        int[] b = {3, 2, 2, 3, 3, 2};
+        
+        Solution sol = new Solution();
+        ArrayList<Integer> result = sol.findUnion(a, b);
+        
+        System.out.print("Union of arrays: ");
+        System.out.println(result);
+    }
+}
