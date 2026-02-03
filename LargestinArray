@@ -1,0 +1,26 @@
+class Solution {
+    public int largest(int[] arr) {
+        int max = arr[0];
+        
+        for(int i = 1; i < arr.length; i++) {
+            if(arr[i] > max) {
+                max = arr[i];
+            }
+        }
+        
+        return max;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        
+        int[] arr = {1, 8, 7, 56, 90};
+        
+        Solution sol = new Solution();
+        int answer = sol.largest(arr);
+        
+        System.out.println("Array: " + java.util.Arrays.toString(arr));
+        System.out.println("Largest element: " + answer);
+    }
+}
